@@ -1,0 +1,28 @@
+{
+  "name": "ai-paybii",
+  "version": "1.0.0",
+  "description": "Creating and automated testing portal using ai",
+  "main": "index.js",
+  "author": "Christopher Oladimeji",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "client": "yarn workspace client start",
+    "server": "yarn workspace server start",
+    "dev": "concurrently \"yarn client\" \"yarn server\"",
+    "test:mocha": "mocha -r ts-node/register server/src/tests/**/*.spec.ts",
+    "test:mocha:watch": "mocha -r ts-node/register server/src/tests/**/*.spec.ts --watch"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.10",
+    "chai": "^5.1.2",
+    "chai-http": "^5.1.1",
+    "mocha": "^11.0.1",
+    "ts-mocha": "^10.0.0"
+  }
+}
